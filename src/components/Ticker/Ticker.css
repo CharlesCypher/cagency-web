@@ -11,6 +11,7 @@
     position: absolute;
     bottom: -3.4em;
     overflow: hidden;
+    z-index: 100;
 }
 
 .text-running-wrapper {

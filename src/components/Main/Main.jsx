@@ -11,6 +11,7 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
+import SectionSeven from "../SectionSeven/SectionSeven";
 
 const Main = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -22,12 +23,12 @@ const Main = () => {
       rootMargin: "0px",
       threshold: 0.75,
     };
-    const callback = (entries, observer) => {
+    const callback = (entries) => {
       entries.forEach((entry) => {
         const { target } = entry;
-        // if (target) {
-        //   cursor.classList.add("d-none");
-        // }
+        if (target) {
+          cursor.classList.add("d-none");
+        }
         const { className } = target;
         console.log([className].includes("orange"));
         if (entry.intersectionRatio >= 0.75) {
@@ -39,7 +40,7 @@ const Main = () => {
     };
     const observer = new IntersectionObserver(callback, options);
 
-    sections.forEach((section, index) => {
+    sections.forEach((section) => {
       observer.observe(section);
     });
   }, []);
@@ -81,6 +82,7 @@ const Main = () => {
         <SectionThree />
         <SectionFour />
         <SectionFive />
+        <SectionSeven />
       </main>
     </>
   );
