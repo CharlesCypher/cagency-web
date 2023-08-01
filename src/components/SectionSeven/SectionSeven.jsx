@@ -4,7 +4,7 @@ const SectionSeven = () => {
   return (
     <section className="section">
       <div className="slider-wrapper">
-        <div className="slider-wrapper-inner">
+        <div className="slider-wrapper-inner" style={{ transform: "translateY(0%)" }}>
           <div className="title-wrapper slider-title">
             <div className="cropper-heading center">
               <div
@@ -108,8 +108,8 @@ const SectionSeven = () => {
             </div>
           </div>
         </div>
+        <div className="slider-grad"></div>
       </div>
-      <div className="slider-grad"></div>
     </section>
   );
 };

@@ -26,11 +26,10 @@ const Main = () => {
     const callback = (entries) => {
       entries.forEach((entry) => {
         const { target } = entry;
-        if (target) {
-          cursor.classList.add("d-none");
-        }
         const { className } = target;
-        console.log([className].includes("orange"));
+        if (className) {
+          // cursor.classList.add("d-none");
+        }
         if (entry.intersectionRatio >= 0.75) {
           target.classList.add("is-visible");
         } else {
