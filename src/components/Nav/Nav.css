@@ -1,0 +1,22 @@
+.cagency-header {
+    padding-block: 1.5rem;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+}
+
+.cagency-navbar {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.cagency-navbar .logo {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.cagency-navbar svg {
+    max-width: 4%;
+    cursor: pointer;
+}

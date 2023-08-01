@@ -1,0 +1,24 @@
+.about-cagency {
+    max-height: 59.25rem;
+    /* min-height: 100vh; */
+    justify-content: center;
+    text-decoration: none;
+}
+
+.title-wrapper.about-section {
+    margin-top: 15rem;
+}
+
+.about-para-wrapper {
+    margin-top: auto;
+    max-width: 29rem;
+    margin-bottom: 6.25rem;
+}
+
+.about-para {
+    margin-top: 5rem;
+}
+
+.mobile {
+    display: none;
+}

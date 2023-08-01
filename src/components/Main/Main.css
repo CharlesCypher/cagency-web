@@ -1,0 +1,51 @@
+main {
+    opacity: 1;
+    scroll-snap-type: y mandatory;
+}
+
+.main-overlay {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://odama.io/images/overlay-bg-hero-home.svg);
+    background-position: 0 0;
+    background-size: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-wrapper {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.hero-header-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 3.75rem;
+}
+
+.hero-header-wrapper.mobile {
+    display: none;
+}
+
+.hero-h1 {
+    font-size: 7rem;
+    font-weight: 600;
+}
+
+/* Scroll behaviour */
+@media (min-height: 30em) {
+    main {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        height: 100vh;
+    }
+}
+
+@media (min-height: 30em) {
+    .section {
+        height: 100vh;
+    }
+}

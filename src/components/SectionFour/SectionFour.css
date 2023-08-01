@@ -1,0 +1,25 @@
+.section.lot-section {
+    --vh: 1vh;
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+
+.lot-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.lottie-animation {
+    width: 100%;
+    margin-top: auto;
+}
