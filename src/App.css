@@ -6,7 +6,6 @@ h5 {
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
-  /* font-family: Odasans\ extended,sans-serif; */
   font-weight: 600;
   line-height: 1.1;
 }
@@ -16,7 +15,6 @@ h1 {
 }
 
 h2 {
-  /* font-family: Odasans\ extended,sans-serif; */
   font-size: 5.5rem;
 }
 
@@ -29,9 +27,7 @@ h4 {
 }
 
 h5 {
-
-  /* font-family: Odasans\ extended,sans-serif; */
-  font-size: 2.25em;
+  font-size: 2.25rem;
 }
 
 p {
@@ -87,6 +83,10 @@ p {
   display: flex;
 }
 
+.section.sect-7 {
+  scroll-snap-align: top;
+}
+
 .relative {
   position: relative;
 }
@@ -124,4 +124,48 @@ p {
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
   display: grid;
+}
+
+@media screen and (max-width: 1240px) {
+  h1 {
+    font-size: 6rem;
+  }
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  h5 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1.6rem;
+  }
 }

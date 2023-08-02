@@ -23,12 +23,52 @@
 }
 
 .sticky-paper-img {
-    width: 12.5em;
-    height: 12.5em;
+    width: 12.5rem;
+    height: 12.5rem;
     margin-left: auto;
 }
 
 .sticky-paper-text {
     color: #000;
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 1240px) {
+    .sticky-paper-img {
+        width: 10.5rem;
+        height: 10.5rem;
+        margin-left: auto;
+    }
+
+    .row.gap-8 {
+        gap: 2.75rem;
+    }
+
+    .col.col-2.w-60 {
+        max-width: 60%;
+    }
+
+    .col.col-2.wd-45 {
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sticky-paper-img {
+        width: 7.5rem;
+        height: 7.5rem;
+        margin-left: auto;
+    }
+
+    .row.gap-8 {
+        gap: 1.75rem;
+    }
+
+    .col.col-2.w-60 {
+        max-width: 55%;
+    }
+
+    .col.col-2.wd-45 {
+        max-width: 50%;
+    }
 }

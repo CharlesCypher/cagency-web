@@ -35,6 +35,14 @@ main {
     font-weight: 600;
 }
 
+
+@media screen and (max-width: 768px) {
+    .hero-h1 {
+        font-size: 4.5rem;
+        font-weight: 600;
+    }
+}
+
 /* Scroll behaviour */
 @media (min-height: 30em) {
     main {

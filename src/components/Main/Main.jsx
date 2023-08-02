@@ -7,11 +7,12 @@ import SectionTwo from "../SectionTwo/SectionTwo";
 import SectionThree from "../SectionThree/SectionThree";
 import SectionFour from "../SectionFour/SectionFour";
 import SectionFive from "../SectionFive/SectionFive";
+import SectionSeven from "../SectionSeven/SectionSeven";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import SectionSeven from "../SectionSeven/SectionSeven";
+import SectionSix from "../SectionSix/SectionSix";
 
 const Main = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -82,6 +83,7 @@ const Main = () => {
         <SectionFour />
         <SectionFive />
         <SectionSeven />
+        <SectionSix />
       </main>
     </>
   );

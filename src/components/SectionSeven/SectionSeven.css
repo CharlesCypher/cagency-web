@@ -19,7 +19,7 @@
 
 .slider-grad {
     z-index: 9;
-    height: 4em;
+    height: 4rem;
     background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
     display: block;
     position: absolute;
@@ -56,6 +56,10 @@
 
 .slider.ind {
     margin-top: 6.5rem;
+}
+
+.slider {
+    display: flex;
 }
 
 .card-row {

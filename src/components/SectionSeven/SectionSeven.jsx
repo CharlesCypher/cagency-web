@@ -1,10 +1,87 @@
 import "./SectionSeven.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLayoutEffect, useRef } from "react";
 
 const SectionSeven = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const component = useRef();
+  const pinSlider = useRef();
+  const content1 = useRef();
+  const content2 = useRef();
+  const content3 = useRef();
+  const content4 = useRef();
+  const content5 = useRef();
+  const content6 = useRef();
+  const content7 = useRef();
+  const content8 = useRef();
+  const content9 = useRef();
+  //   const content1 = useRef();
+
+  const tl = useRef();
+
+  //   useLayoutEffect(() => {
+  //     let ctx = gsap.context(() => {
+  //       let contents = gsap.utils.toArray(".slider-item");
+  //       gsap.set(contents, { autoAlpha: 0, y: 500 });
+
+  //       let tl = gsap.timeline({
+  //         scrollTrigger: {
+  //           trigger: pinSlider.current,
+  //           scrub: true,
+  //           pin: true,
+  //           start: "top top",
+  //           end: "+=" + pinSlider.current.innerHeight,
+  //           markers: true,
+  //         },
+  //       });
+
+  //       contents.forEach((content) => {
+  //         tl.to(content, {
+  //           keyframes: { y: [500, 185, -325] },
+  //           duration: 5,
+  //           autoAlpha: 1,
+  //         });
+  //       });
+  //       /* let content = gsap.utils.toArray(".content");
+  //         tl.current = gsap
+  //           .timeline({
+  //             scrollTrigger: {
+  //               trigger: pinSlider.current,
+  //               scrub: true,
+  //               pin: true,
+  //               start: "top top",
+  //               end: "3000px",
+  //               markers: true
+  //             }
+  //           })
+  //           .set(content1.current, { opacity: 0, y: 500 })
+  //           .set(content2.current, { opacity: 0, y: 500 })
+  //           .set(content3.current, { opacity: 0, y: 500 })
+  //           .to(content1.current, {
+  //             keyframes: { y: [500, 185, -325] },
+  //             duration: 5,
+  //             opacity: 1
+  //           })
+  //           .to(content2.current, {
+  //             keyframes: { y: [500, 185, -325] },
+  //             duration: 5,
+  //             opacity: 1
+  //           })
+  //           .to(content3.current, {
+  //             keyframes: { y: [500, 185, -325] },
+  //             duration: 5,
+  //             opacity: 1
+  //           });
+  //    */
+  //     }, component);
+  //     return () => ctx.revert();
+  //   });
   return (
-    <section className="section">
+    <section className="section sect-7" ref={component}>
       <div className="slider-wrapper">
-        <div className="slider-wrapper-inner" style={{ transform: "translateY(0%)" }}>
+        <div className="slider-wrapper-inner" ref={pinSlider}>
           <div className="title-wrapper slider-title">
             <div className="cropper-heading center">
               <div
@@ -18,7 +95,7 @@ const SectionSeven = () => {
           <div className="slide-group">
             <div className="slider ind">
               <div className="card-row">
-                <div className="slider-item bg-primary rot-1 slide-1">
+                <div className="slider-item bg-primary rot-1 slide-1" ref={content1}>
                   <div className="slider-icon w-embed">
                     <svg width="100%" height="100%" viewBox="0 0 146 146" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -45,12 +122,12 @@ const SectionSeven = () => {
                   </div>
                   <h5 className="slider-heading txt-black txt-center">Craft products that delight and connect, elevating human experience.</h5>
                 </div>
-                <div className="slider-item bg-tertiary rot-1">
-                  <img src="images/eye.png" loading="lazy" alt="" className="slider-icon" />
+                <div className="slider-item bg-tertiary rot-1" ref={content1}>
+                  <img src="https://odama.io/images/eye.png" loading="lazy" alt="" className="slider-icon" />
                   <h5 className="slider-heading txt-black">Our designs are tailored to your brand, audience, and goals. Always.</h5>
                 </div>
-                <div className="slider-item bg-secondary rot-6">
-                  <img src="images/puzzle.svg" loading="lazy" alt="" className="slider-icon" />
+                <div className="slider-item bg-secondary rot-6" ref={content1}>
+                  <img src="https://odama.io/images/puzzle.svg" loading="lazy" alt="" className="slider-icon" />
                   <h5 className="slider-heading txt-black txt-center">
                     Don&apos;t let a problem hold you back. We&apos;ll break it down and turn it into an opportunity.
                   </h5>
@@ -59,7 +136,7 @@ const SectionSeven = () => {
             </div>
             <div className="slider">
               <div className="card-row">
-                <div className="slider-item bg-secondary rot-2 slide-2">
+                <div className="slider-item bg-secondary rot-2 slide-2" ref={content2}>
                   <div className="slider-icon w-embed">
                     <svg width="100%" height="100%" viewBox="0 0 137 137" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -72,12 +149,12 @@ const SectionSeven = () => {
                   </div>
                   <h5 className="slider-heading txt-black txt-center">Don&apos;t blend in, stand out with our innovative design solutions.</h5>
                 </div>
-                <div className="slider-item bg-primary rot-2 slide-3">
-                  <img src="images/paper.svg" loading="lazy" alt="" className="slider-icon" />
+                <div className="slider-item bg-primary rot-2 slide-3" ref={content2}>
+                  <img src="https://odama.io/images/paper.svg" loading="lazy" alt="" className="slider-icon" />
                   <h5 className="slider-heading txt-black txt-center">Keep track of our progress and results with our interactive daily reports.</h5>
                 </div>
-                <div className="slider-item bg-tertiary rot-4 slide-1">
-                  <img src="images/buble.svg" loading="lazy" alt="" className="slider-icon" />
+                <div className="slider-item bg-tertiary rot-4 slide-1" ref={content2}>
+                  <img src="https://odama.io/images/buble.svg" loading="lazy" alt="" className="slider-icon" />
                   <h5 className="slider-heading txt-black txt-center">
                     Collaborate with us! Every decision is made through discussion in our workflow.
                   </h5>
@@ -86,20 +163,20 @@ const SectionSeven = () => {
             </div>
             <div className="slider ind">
               <div className="card-row">
-                <div className="slider-item bg-tertiary rot-1 slide-3">
-                  <img src="images/brain.svg" loading="lazy" alt="" className="slider-icon" />
+                <div className="slider-item bg-tertiary rot-1 slide-3" ref={content3}>
+                  <img src="https://odama.io/images/brain.svg" loading="lazy" alt="" className="slider-icon" />
                   <h5 className="slider-heading txt-black txt-center">
                     Whether you need UI/UX design or stunning illustrations, we&apos;ve got you covered.
                   </h5>
                 </div>
-                <div className="slider-item bg-secondary rot-3 slide-2">
-                  <img src="images/star.svg" loading="lazy" alt="" className="slider-icon" />
+                <div className="slider-item bg-secondary rot-3 slide-2" ref={content3}>
+                  <img src="https://odama.io/images/star.svg" loading="lazy" alt="" className="slider-icon" />
                   <h5 className="slider-heading txt-black txt-center">
                     Step up your design game with our extraordinary solutions that go beyond the template.
                   </h5>
                 </div>
-                <div className="slider-item bg-primary rot-5 slide-2">
-                  <img src="images/box.svg" loading="lazy" alt="" className="slider-icon" />
+                <div className="slider-item bg-primary rot-5 slide-2" ref={content3}>
+                  <img src="https://odama.io/images/box.svg" loading="lazy" alt="" className="slider-icon" />
                   <h5 className="slider-heading txt-black txt-center">
                     From ideation to execution, we&apos;ll work closely with you to tailor deliverables to your needs.
                   </h5>
