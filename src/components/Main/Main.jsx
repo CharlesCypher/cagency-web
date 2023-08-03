@@ -1,5 +1,5 @@
 import "./Main.css";
-import Nav from "../Nav/Nav";
+import SectionZero from "../SectionZero/SectionZero";
 import SectionOne from "../SectionOne/SectionOne";
 import SectionTwo from "../SectionTwo/SectionTwo";
 import SectionThree from "../SectionThree/SectionThree";
@@ -20,7 +20,6 @@ const Main = () => {
       let panels = gsap.utils.toArray(".section"),
         observer = ScrollTrigger.normalizeScroll(true),
         scrollTween;
-
       // on touch devices, ignore touchstart events if there's an in-progress tween so that touch-scrolling doesn't interrupt and make it wonky
       document.addEventListener(
         "touchstart",
@@ -32,7 +31,6 @@ const Main = () => {
         },
         { capture: true, passive: false }
       );
-
       function goToSection(i) {
         scrollTween = gsap.to(window, {
           scrollTo: { y: i * innerHeight, autoKill: false },
@@ -46,7 +44,6 @@ const Main = () => {
           overwrite: true,
         });
       }
-
       panels.forEach((panel, i) => {
         ScrollTrigger.create({
           trigger: panel,
@@ -55,7 +52,6 @@ const Main = () => {
           onToggle: (self) => self.isActive && !scrollTween && goToSection(i),
         });
       });
-
       // just in case the user forces the scroll to an inbetween spot (like a momentum scroll on a Mac that ends AFTER the scrollTo tween finishes):
       ScrollTrigger.create({
         start: 0,
@@ -67,8 +63,8 @@ const Main = () => {
   }, []);
   return (
     <>
-      <main style={{ position: "relative", height: "100%" }} className="main">
-        <Nav />
+      <main className="relative" style={{ height: "100%" }}>
+        <SectionZero />
         <SectionOne />
         <SectionTwo />
         <SectionThree />

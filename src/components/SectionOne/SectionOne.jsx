@@ -22,7 +22,6 @@ const SectionOne = () => {
             start: "top 85% ",
             end: "+=500",
             once: true,
-            // toggleActions: "restart none none reverse",
           },
         })
         .fromTo(

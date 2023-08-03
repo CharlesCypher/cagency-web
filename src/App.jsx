@@ -1,12 +1,12 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import Home from "./Pages/Home/Home";
-import React from "react";
 import useMouse from "@react-hook/mouse-position";
 
 const App = () => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const mouse = useMouse(ref, { leaveDelay: 30, enterDelay: 30 });
   let mouseXPosition = 0;
   let mouseYPosition = 0;

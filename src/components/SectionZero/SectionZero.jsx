@@ -1,13 +1,13 @@
-import "./Nav.css";
-import Button from "../CTA/Button";
+import "./SectionZero.css";
+import Button from "../Button/Button";
 import Ticker from "../Ticker/Ticker";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
-const Nav = () => {
+const SectionZero = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   const line1 = useRef(null);
@@ -35,28 +35,28 @@ const Nav = () => {
     return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    const sections = [...document.querySelectorAll(".section")];
-    let options = {
-      rootMargin: "0px",
-      threshold: 0.75,
-    };
-    const callback = (entries) => {
-      entries.forEach((entry) => {
-        const { target } = entry;
-        if (entry.intersectionRatio >= 0.75) {
-          target.classList.add("is-visible");
-        } else {
-          target.classList.remove("is-visible");
-        }
-      });
-    };
-    const observer = new IntersectionObserver(callback, options);
+  // useEffect(() => {
+  //   const sections = [...document.querySelectorAll(".section")];
+  //   let options = {
+  //     rootMargin: "0px",
+  //     threshold: 0.75,
+  //   };
+  //   const callback = (entries) => {
+  //     entries.forEach((entry) => {
+  //       const { target } = entry;
+  //       if (entry.intersectionRatio >= 0.75) {
+  //         target.classList.add("is-visible");
+  //       } else {
+  //         target.classList.remove("is-visible");
+  //       }
+  //     });
+  //   };
+  //   const observer = new IntersectionObserver(callback, options);
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-  }, []);
+  //   sections.forEach((section) => {
+  //     observer.observe(section);
+  //   });
+  // }, []);
   return (
     <header className="cagency-header">
       <nav role="navigation" className="cagency-navbar">
@@ -182,4 +182,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default SectionZero;

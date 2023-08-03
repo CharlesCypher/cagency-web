@@ -26,7 +26,7 @@ const SectionFive = () => {
           line1.current,
           { opacity: 0, ease: "Power3.inOut" },
           {
-            duration: 1.1,
+            duration: 1.2,
             opacity: 1,
             ease: "Power3.inOut",
           }
