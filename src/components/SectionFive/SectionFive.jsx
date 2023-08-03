@@ -1,12 +1,12 @@
 import "./SectionFive.css";
-import React, { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion";
 
 const SectionFive = () => {
+  const ref = useRef(null);
   const [cursorVariant, setCursorVariant] = useState("default");
-  const ref = React.useRef(null);
   const mouse = useMouse(ref, { leaveDelay: 0, enterDelay: 0 });
   let mouseXPosition = 0;
   let mouseYPosition = 0;
@@ -30,11 +30,19 @@ const SectionFive = () => {
   };
   const handleOnEnter = () => {
     setCursorVariant("sectionEnter");
+    const cursor = document.querySelector(".custom-cursor-wrapper");
+    cursor.classList.add("d-none");
   };
 
   const handleOnLeave = () => {
     setCursorVariant("default");
+    const cursor = document.querySelector(".custom-cursor-wrapper");
+    cursor.classList.remove("d-none");
   };
+  //   useEffect(() => {
+  //     if (ref.current.classList.contains("is-visible")) {
+  //     }
+  //   }, []);
   return (
     <section ref={ref} className="section bg-primary relative orange" onMouseEnter={handleOnEnter} onMouseLeave={handleOnLeave}>
       <Link to="/" className="cursor-wrapper orange">

@@ -32,7 +32,6 @@ h5 {
 
 p {
   margin-bottom: 0;
-  /* font-family: Odasans, sans-serif; */
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.2rem;
@@ -59,17 +58,19 @@ p {
   width: .9rem;
   height: .9rem;
   filter: sepia();
-  background-color: #fff;
   border-radius: 50%;
-  justify-content: center;
+  text-align: center;
   align-items: center;
-  transition: all .2s linear;
   position: absolute;
   transform: scale(0);
+  justify-content: center;
+  background-color: #fff;
+  transition: all .2s linear;
 }
 
 .custom-cursor-wrapper.d-none {
-  display: none !important;
+  opacity: 0 !important;
+  transition: opacity .3s;
 }
 
 .section {

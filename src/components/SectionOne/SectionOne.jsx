@@ -6,32 +6,43 @@ import { useLayoutEffect, useRef } from "react";
 const SectionOne = () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const sectionOne = useRef(null);
+  const sectionRef = useRef(null);
   const line1 = useRef(null);
   const line2 = useRef(null);
   const line3 = useRef(null);
   const line4 = useRef(null);
 
   useLayoutEffect(() => {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: sectionOne.current,
-          start: "top 80% ",
-          end: "+=500",
-          toggleActions: "restart none none reverse",
-        },
-      })
-      .fromTo(
-        [line1.current, line2.current, line3.current, line4.current],
-        { opacity: 0, x: 0, y: 120, rotateZ: 3, transformStyle: "preserve-3d", ease: "Power3.inOut" },
-        { duration: 1.1, opacity: 1, x: 0, y: 0, rotateZ: 0, transformStyle: "preserve-3d", ease: "Power3.inOut" }
-      );
+    let ctx = gsap.context(() => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85% ",
+            end: "+=500",
+            once: true,
+            // toggleActions: "restart none none reverse",
+          },
+        })
+        .fromTo(
+          [line1.current, line2.current, line3.current, line4.current],
+          { opacity: 0, y: 120, rotateZ: 3, transformStyle: "preserve-3d", ease: "Power3.inOut" },
+          {
+            duration: 1.1,
+            opacity: 1,
+            y: 0,
+            rotateZ: 0,
+            transformStyle: "preserve-3d",
+            ease: "Power3.inOut",
+          }
+        );
+    });
+    return () => ctx.revert();
   }, []);
   return (
-    <section className="section about-cagency">
+    <section className="section about-cagency" ref={sectionRef}>
       <div className="container">
-        <div className="title-wrapper about-section" ref={sectionOne}>
+        <div className="title-wrapper about-section">
           <div className="desktop">
             <div className="cropper-heading">
               <div className="text-wrapper" ref={line1}>

@@ -15,20 +15,23 @@ const Nav = () => {
   const line3 = useRef(null);
 
   useLayoutEffect(() => {
-    const tl = gsap.timeline();
-    tl.fromTo(
-      [line1.current, line2.current, line3.current],
-      {
-        duration: 2,
-        opacity: 0,
-        x: 0,
-        y: 120,
-        rotateZ: 3.3,
-        transformStyle: "preserve-3d",
-        ease: "Power3.inOut",
-      },
-      { duration: 1.1, opacity: 1, x: 0, y: 0, rotateZ: 0, transformStyle: "preserve-3d", ease: "Power3.inOut", delay: 0.5 }
-    );
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+      tl.fromTo(
+        [line1.current, line2.current, line3.current],
+        {
+          duration: 2,
+          opacity: 0,
+          x: 0,
+          y: 120,
+          rotateZ: 3.3,
+          transformStyle: "preserve-3d",
+          ease: "Power3.inOut",
+        },
+        { duration: 1.1, opacity: 1, x: 0, y: 0, rotateZ: 0, transformStyle: "preserve-3d", ease: "Power3.inOut", delay: 0.5 }
+      );
+    });
+    return () => ctx.revert();
   }, []);
 
   useEffect(() => {
