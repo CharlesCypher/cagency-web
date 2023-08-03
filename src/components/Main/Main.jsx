@@ -11,6 +11,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect } from "react";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+// import { CustomEase } from "gsap";
 
 const Main = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -39,7 +40,10 @@ const Main = () => {
             observer.enable();
           },
           duration: 1.1,
-          ease: "Power3.inOut",
+          // ease: CustomEase.create(
+          //   "custom",
+          //   "M0,0 C0,0 0.091,0.351 0.216,0.532 0.261,0.598 0.302,0.644 0.358,0.702 0.408,0.754 0.443,0.773 0.494,0.824 0.537,0.867 0.577,0.886 0.626,0.924 0.663,0.952 0.7,0.966 0.742,0.988 0.779,1.007 0.831,1.025 0.872,1.036 0.911,1.046 1,1.048 1,1.048 "
+          // ),
           onComplete: () => (scrollTween = null),
           overwrite: true,
         });
