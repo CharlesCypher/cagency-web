@@ -11,6 +11,7 @@ const SectionOne = () => {
   const line2 = useRef(null);
   const line3 = useRef(null);
   const line4 = useRef(null);
+  const line5 = useRef(null);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -25,7 +26,7 @@ const SectionOne = () => {
           },
         })
         .fromTo(
-          [line1.current, line2.current, line3.current, line4.current],
+          [line1.current, line2.current, line3.current, line4.current, line5.current],
           { opacity: 0, y: 120, rotateZ: 3, transformStyle: "preserve-3d", ease: "Power3.inOut" },
           {
             duration: 1,
@@ -67,7 +68,7 @@ const SectionOne = () => {
           </div>
           <div className="mobile tablet">
             <div className="cropper-heading">
-              <div className="text-wrapper">
+              <div className="text-wrapper" ref={line5}>
                 <h2 className="section-title">
                   an agency committed TO EVOLVE ABSTRACT IDEAS INTO CONCREATE PRODUCT. MEET us, the most passionate people in the industry
                 </h2>

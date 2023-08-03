@@ -13,12 +13,13 @@ const Nav = () => {
   const line1 = useRef(null);
   const line2 = useRef(null);
   const line3 = useRef(null);
+  const line4 = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
       tl.fromTo(
-        [line1.current, line2.current, line3.current],
+        [line1.current, line2.current, line3.current, line4.current],
         {
           duration: 2,
           opacity: 0,
@@ -35,7 +36,6 @@ const Nav = () => {
   }, []);
 
   useEffect(() => {
-    // const cursor = document.querySelector(".custom-cursor-wrapper");
     const sections = [...document.querySelectorAll(".section")];
     let options = {
       rootMargin: "0px",
@@ -44,10 +44,6 @@ const Nav = () => {
     const callback = (entries) => {
       entries.forEach((entry) => {
         const { target } = entry;
-        const { className } = target;
-        if (className) {
-          // cursor.classList.add("d-none");
-        }
         if (entry.intersectionRatio >= 0.75) {
           target.classList.add("is-visible");
         } else {
@@ -174,7 +170,7 @@ const Nav = () => {
         </div>
         <div className="hero-header-wrapper mobile">
           <div className="cropper-heading">
-            <div className="text-wrapper">
+            <div className="text-wrapper" ref={line4}>
               <h1 className="hero-h1">PURSUE YOUR GOAL, ENJOY YOUR COFFEE, WE’LL DO THE REST</h1>
             </div>
           </div>

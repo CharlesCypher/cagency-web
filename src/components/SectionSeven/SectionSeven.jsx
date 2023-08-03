@@ -1,7 +1,7 @@
 import "./SectionSeven.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 
 const SectionSeven = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -11,15 +11,15 @@ const SectionSeven = () => {
   const content1 = useRef();
   const content2 = useRef();
   const content3 = useRef();
-  const content4 = useRef();
-  const content5 = useRef();
-  const content6 = useRef();
-  const content7 = useRef();
-  const content8 = useRef();
-  const content9 = useRef();
+  //   const content4 = useRef();
+  //   const content5 = useRef();
+  //   const content6 = useRef();
+  //   const content7 = useRef();
+  //   const content8 = useRef();
+  //   const content9 = useRef();
   //   const content1 = useRef();
 
-  const tl = useRef();
+  //   const tl = useRef();
 
   //   useLayoutEffect(() => {
   //     let ctx = gsap.context(() => {

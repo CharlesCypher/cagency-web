@@ -1,8 +1,51 @@
 import "./SectionFour.css";
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const SectionFour = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const sectionRef = useRef(null);
+  const line1 = useRef(null);
+  const line2 = useRef(null);
+  const line3 = useRef(null);
+  const line4 = useRef(null);
+  const line5 = useRef(null);
+  const line6 = useRef(null);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85% ",
+            end: "+=500",
+            once: true,
+            // toggleActions: "restart none none reverse",
+          },
+        })
+        .fromTo(
+          [line1.current, line2.current, line3.current, line4.current, line5.current, line6.current],
+          { opacity: 0, y: 0, rotateZ: 0, transformStyle: "preserve-3d", ease: "Power3.inOut" },
+          {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            rotateZ: 0,
+            transformStyle: "preserve-3d",
+            ease: "Power3.inOut",
+            stagger: {
+              amount: 0.3,
+            },
+          }
+        );
+    });
+    return () => ctx.revert();
+  }, []);
   return (
-    <section className="section lot-section">
+    <section className="section lot-section" ref={sectionRef}>
       <div className="lot-wrapper data-content">
         <div className="lottie-animation">
           <svg
@@ -23,6 +66,7 @@ const SectionFour = () => {
                 transform="matrix(0.9661378264427185,-0.2580265998840332,0.2580265998840332,0.9661378264427185,110.16899871826172,159.59800720214844)"
                 opacity="1"
                 style={{ display: "block" }}
+                ref={line1}
               >
                 <g opacity="1" transform="matrix(1,0,0,1,0,0)">
                   <path
@@ -32,7 +76,7 @@ const SectionFour = () => {
                   ></path>
                 </g>
               </g>
-              <g transform="matrix(1,0,0,1,299.10400390625,111.95999908447266)" opacity="1" style={{ display: "block" }}>
+              <g transform="matrix(1,0,0,1,299.10400390625,111.95999908447266)" opacity="1" style={{ display: "block" }} ref={line2}>
                 <g opacity="1" transform="matrix(0.979395866394043,-0.20194977521896362,0.20194977521896362,0.979395866394043,0,0)">
                   <path
                     fill="rgb(255,255,255)"
@@ -45,6 +89,7 @@ const SectionFour = () => {
                 transform="matrix(0.898725152015686,0.43851232528686523,-0.43851232528686523,0.898725152015686,446.7120056152344,127.14700317382812)"
                 opacity="1"
                 style={{ display: "block" }}
+                ref={line3}
               >
                 <g opacity="1" transform="matrix(1,0,0,1,0,0)">
                   <path
@@ -54,7 +99,7 @@ const SectionFour = () => {
                   ></path>
                 </g>
               </g>
-              <g transform="matrix(1,0,0,1,690.4099731445312,99.24400329589844)" opacity="1" style={{ display: "block" }}>
+              <g transform="matrix(1,0,0,1,690.4099731445312,99.24400329589844)" opacity="1" style={{ display: "block" }} ref={line4}>
                 <g opacity="1" transform="matrix(0.9988816380500793,0.04728078842163086,-0.04728078842163086,0.9988816380500793,0,0)">
                   <path
                     fill="rgb(255,255,255)"
@@ -63,7 +108,7 @@ const SectionFour = () => {
                   ></path>
                 </g>
               </g>
-              <g transform="matrix(1,0,0,1,846.9829711914062,276.635009765625)" opacity="1" style={{ display: "block" }}>
+              <g transform="matrix(1,0,0,1,846.9829711914062,276.635009765625)" opacity="1" style={{ display: "block" }} ref={line5}>
                 <g opacity="1" transform="matrix(0.9678322672843933,-0.2515964210033417,0.2515964210033417,0.9678322672843933,0,0)">
                   <path
                     fill="rgb(255,255,255)"
@@ -76,6 +121,7 @@ const SectionFour = () => {
                 transform="matrix(0.9639005064964294,-0.2662627696990967,0.2662627696990967,0.9639005064964294,1038.405029296875,115.34200286865234)"
                 opacity="1"
                 style={{ display: "block" }}
+                ref={line6}
               >
                 <g opacity="1" transform="matrix(1,0,0,1,0,0)">
                   <path

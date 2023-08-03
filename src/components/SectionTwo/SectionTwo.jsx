@@ -23,7 +23,6 @@ const SectionTwo = () => {
             start: "top 85% ",
             end: "+=500",
             once: true,
-            // toggleActions: "restart none none reverse",
           },
         })
         .fromTo(
@@ -35,9 +34,6 @@ const SectionTwo = () => {
             rotateZ: 0,
             transformStyle: "preserve-3d",
             ease: "Power3.inOut",
-            stagger: {
-              amount: 0.3,
-            },
           }
         )
         .fromTo(
