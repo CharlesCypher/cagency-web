@@ -9,6 +9,10 @@ const SectionTwo = () => {
   const sectionRef = useRef(null);
   const line1 = useRef(null);
   const line2 = useRef(null);
+  const paper1 = useRef(null);
+  const paper2 = useRef(null);
+  const paper3 = useRef(null);
+  const paper4 = useRef(null);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -24,15 +28,22 @@ const SectionTwo = () => {
         })
         .fromTo(
           [line1.current, line2.current],
-          { opacity: 0, y: 120, rotateZ: 3, transformStyle: "preserve-3d", ease: "Power3.inOut" },
+          { opacity: 0, y: 120, transformStyle: "preserve-3d", ease: "Power3.inOut" },
           {
-            duration: 1.1,
             opacity: 1,
             y: 0,
             rotateZ: 0,
             transformStyle: "preserve-3d",
             ease: "Power3.inOut",
+            stagger: {
+              amount: 0.3,
+            },
           }
+        )
+        .fromTo(
+          [paper1.current, paper2.current, paper3.current, paper4.current],
+          { opacity: 0, y: 30, transformStyle: "preserve-3d", ease: "Power3.inOut" },
+          { opacity: 1, y: 0, transformStyle: "preserve-3d", ease: "Power3.inOut", stagger: { amount: 0.3 }, delay: -0.3 }
         );
     });
     return () => ctx.revert();
@@ -43,7 +54,7 @@ const SectionTwo = () => {
         <div className="row gap-8">
           <div className="col col-2 w-60">
             <div className="sect-4-grid">
-              <div className="sticky-paper">
+              <div className="sticky-paper" ref={paper1}>
                 <img
                   src="https://odama.io/images/odama_LP_Artboard-1.png"
                   alt="illustration of a laptop"
@@ -52,7 +63,7 @@ const SectionTwo = () => {
                 />
                 <h3 className="sticky-paper-text">Landing Page Design</h3>
               </div>
-              <div className="sticky-paper">
+              <div className="sticky-paper" ref={paper2}>
                 <img
                   src="https://odama.io/images/odama_LP_Artboard-2.png"
                   alt="illustration of a monitor"
@@ -61,7 +72,7 @@ const SectionTwo = () => {
                 />
                 <h3 className="sticky-paper-text">Saas, POS, Dashboard</h3>
               </div>
-              <div className="sticky-paper">
+              <div className="sticky-paper" ref={paper3}>
                 <img
                   src="https://odama.io/images/odama_LP_Artboard-3.png"
                   alt="illustration of a 2D & 3D object"
@@ -70,7 +81,7 @@ const SectionTwo = () => {
                 />
                 <h3 className="sticky-paper-text">2D & 3D Illustration</h3>
               </div>
-              <div className="sticky-paper">
+              <div className="sticky-paper" ref={paper4}>
                 <img
                   src="https://odama.io/images/odama_LP_Artboard-4.png"
                   alt="illustration of a phone"

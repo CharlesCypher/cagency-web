@@ -9,7 +9,7 @@ import SectionSix from "../SectionSix/SectionSix";
 import SectionSeven from "../SectionSeven/SectionSeven";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 const Main = () => {
@@ -39,7 +39,7 @@ const Main = () => {
           observer.disable(); // for touch devices, as soon as we start forcing scroll it should stop any current touch-scrolling, so we just disable() and enable() the normalizeScroll observer
           observer.enable();
         },
-        duration: 1,
+        duration: 1.1,
         onComplete: () => (scrollTween = null),
         overwrite: true,
       });

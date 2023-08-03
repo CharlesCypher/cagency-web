@@ -1,5 +1,5 @@
 import "./SectionFive.css";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion";
@@ -39,10 +39,6 @@ const SectionFive = () => {
     const cursor = document.querySelector(".custom-cursor-wrapper");
     cursor.classList.remove("d-none");
   };
-  //   useEffect(() => {
-  //     if (ref.current.classList.contains("is-visible")) {
-  //     }
-  //   }, []);
   return (
     <section ref={ref} className="section bg-primary relative orange" onMouseEnter={handleOnEnter} onMouseLeave={handleOnLeave}>
       <Link to="/" className="cursor-wrapper orange">

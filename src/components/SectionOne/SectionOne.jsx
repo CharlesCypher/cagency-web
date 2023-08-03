@@ -28,12 +28,13 @@ const SectionOne = () => {
           [line1.current, line2.current, line3.current, line4.current],
           { opacity: 0, y: 120, rotateZ: 3, transformStyle: "preserve-3d", ease: "Power3.inOut" },
           {
-            duration: 1.1,
+            duration: 1,
             opacity: 1,
             y: 0,
             rotateZ: 0,
             transformStyle: "preserve-3d",
             ease: "Power3.inOut",
+            delay: 1.1,
           }
         );
     });
