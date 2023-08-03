@@ -1,5 +1,5 @@
 import "./SectionFour.css";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -14,36 +14,36 @@ const SectionFour = () => {
   const line5 = useRef(null);
   const line6 = useRef(null);
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85% ",
-            end: "+=500",
-            once: true,
-            // toggleActions: "restart none none reverse",
-          },
-        })
-        .fromTo(
-          [line1.current, line2.current, line3.current, line4.current, line5.current, line6.current],
-          { opacity: 0, y: 0, rotateZ: 0, transformStyle: "preserve-3d", ease: "Power3.inOut" },
-          {
-            duration: 1,
-            opacity: 1,
-            y: 0,
-            rotateZ: 0,
-            transformStyle: "preserve-3d",
-            ease: "Power3.inOut",
-            stagger: {
-              amount: 0.3,
-            },
-          }
-        );
-    });
-    return () => ctx.revert();
-  }, []);
+  // useLayoutEffect(() => {
+  //   let ctx = gsap.context(() => {
+  //     gsap
+  //       .timeline({
+  //         scrollTrigger: {
+  //           trigger: sectionRef.current,
+  //           start: "top 85% ",
+  //           end: "+=500",
+  //           once: true,
+  //           // toggleActions: "restart none none reverse",
+  //         },
+  //       })
+  //       .fromTo(
+  //         [line1.current, line2.current, line3.current, line4.current, line5.current, line6.current],
+  //         { opacity: 0, y: 0, rotateZ: 0, transformStyle: "preserve-3d", ease: "Power3.inOut" },
+  //         {
+  //           duration: 1,
+  //           opacity: 1,
+  //           y: 0,
+  //           rotateZ: 0,
+  //           transformStyle: "preserve-3d",
+  //           ease: "Power3.inOut",
+  //           stagger: {
+  //             amount: 0.3,
+  //           },
+  //         }
+  //       );
+  //   });
+  //   return () => ctx.revert();
+  // }, []);
   return (
     <section className="section lot-section" ref={sectionRef}>
       <div className="lot-wrapper data-content">
