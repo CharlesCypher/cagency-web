@@ -34,7 +34,6 @@ const SectionOne = () => {
             rotateZ: 0,
             transformStyle: "preserve-3d",
             ease: "Power3.inOut",
-            delay: 1.1,
           }
         );
     });
