@@ -19,7 +19,6 @@ const SectionOne = () => {
           trigger: sectionOne.current,
           start: "top 80% ",
           end: "+=500",
-          markers: true,
           toggleActions: "restart none none reverse",
         },
       })
