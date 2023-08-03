@@ -4,8 +4,33 @@ import { motion } from "framer-motion";
 import Home from "./Pages/Home/Home";
 import React from "react";
 import useMouse from "@react-hook/mouse-position";
+import Lenis from "@studio-freight/lenis";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
 
 const App = () => {
+  // const lenis = new Lenis();
+
+  // lenis.on("scroll", (e) => {
+  //   console.log(e);
+  // });
+
+  // function raf(time) {
+  //   lenis.raf(time);
+  //   requestAnimationFrame(raf);
+  // }
+
+  // requestAnimationFrame(raf);
+  // const lenis = new Lenis();
+
+  // lenis.on("scroll", ScrollTrigger.update);
+
+  // gsap.ticker.add((time) => {
+  //   lenis.raf(time * 1000);
+  // });
+
+  // gsap.ticker.lagSmoothing(0);
+
   const ref = React.useRef(null);
   const mouse = useMouse(ref, { leaveDelay: 30, enterDelay: 30 });
   let mouseXPosition = 0;

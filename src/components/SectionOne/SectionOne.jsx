@@ -1,28 +1,72 @@
 import "./SectionOne.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
 const SectionOne = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const sectionOne = useRef(null);
+  const line1 = useRef(null);
+  const line2 = useRef(null);
+  const line3 = useRef(null);
+  const line4 = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+    // tl.set([line1.current, line2.current, line3.current, line4.current], {
+    // duration: 2,
+    // opacity: 0,
+    // x: 0,
+    // y: 120,
+    // rotateZ: 3,
+    // transformStyle: "preserve-3d",
+    // ease: "Power3.inOut",
+    // });
+    tl.fromTo(
+      [line1.current, line2.current, line3.current, line4.current],
+      { opacity: 0, x: 0, y: 120, rotateZ: 3, transformStyle: "preserve-3d", ease: "Power3.inOut" },
+      {
+        duration: 1.1,
+        opacity: 1,
+        x: 0,
+        y: 0,
+        rotateZ: 0,
+        transformStyle: "preserve-3d",
+        ease: "Power3.inOut",
+        delay: 0.5,
+        // scrollTrigger: {
+        //   trigger: sectionOne.current,
+        //   start: "top top", // when the top of the trigger hits the top of the viewport
+        //   end: "+=500", // end after scrolling 500px beyond the start
+        //   markers: true,
+        //   // triggerActions: "restart none reset none",
+        // },
+      }
+    );
+  }, []);
   return (
     <section className="section about-cagency">
       <div className="container">
-        <div className="title-wrapper about-section data-content">
+        <div className="title-wrapper about-section" ref={sectionOne}>
           <div className="desktop">
             <div className="cropper-heading">
-              <div className="text-wrapper">
+              <div className="text-wrapper" ref={line1}>
                 <h2 className="section-title">an agency committed TO EVOLVE</h2>
               </div>
             </div>
             <div className="cropper-heading">
-              <div className="text-wrapper">
+              <div className="text-wrapper" ref={line2}>
                 <h2 className="section-title">ABSTRACT IDEAS INTO CONCREATE</h2>
               </div>
             </div>
             <div className="cropper-heading">
-              <div className="text-wrapper">
+              <div className="text-wrapper" ref={line3}>
                 <h2 className="section-title">PRODUCT. MEET us, the most</h2>
               </div>
             </div>
             <div className="cropper-heading">
-              <div className="text-wrapper">
+              <div className="text-wrapper" ref={line4}>
                 <h2 className="section-title">passionate people in the industry</h2>
               </div>
             </div>

@@ -1,8 +1,15 @@
+import { gsap } from "gsap";
 import "./Ticker.css";
+import { useEffect, useRef } from "react";
 
 const Ticker = () => {
+  const ticker = useRef();
+  useEffect(() => {
+    const tl = gsap.timeline();
+    tl.fromTo(ticker.current, { opacity: 0 }, { duration: 1, opacity: 1 });
+  }, []);
   return (
-    <div className="text-running-box">
+    <div className="text-running-box" ref={ticker}>
       <div className="text-running-wrapper">
         <div className="text-running-inner">
           <h5 className="text-running text-black">

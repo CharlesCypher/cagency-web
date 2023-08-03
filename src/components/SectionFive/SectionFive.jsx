@@ -16,8 +16,8 @@ const SectionFive = () => {
     default: {
       transformStyle: "preserve-3d",
       willChange: "transform, opacity",
-      x: mouseXPosition - 50,
-      y: mouseYPosition - 50,
+      x: mouseXPosition,
+      y: mouseYPosition,
     },
 
     sectionEnter: {
