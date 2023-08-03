@@ -3,7 +3,9 @@ import "./SectionSix.css";
 const SectionSix = () => {
   return (
     <section className="section">
-      <div className=""></div>
+      <div className="">
+        <h1>WORKING ON IT 😌</h1>
+      </div>
     </section>
   );
 };

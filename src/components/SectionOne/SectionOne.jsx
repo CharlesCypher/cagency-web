@@ -1,7 +1,7 @@
 import "./SectionOne.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 const SectionOne = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -12,38 +12,22 @@ const SectionOne = () => {
   const line3 = useRef(null);
   const line4 = useRef(null);
 
-  useEffect(() => {
-    const tl = gsap.timeline();
-    // tl.set([line1.current, line2.current, line3.current, line4.current], {
-    // duration: 2,
-    // opacity: 0,
-    // x: 0,
-    // y: 120,
-    // rotateZ: 3,
-    // transformStyle: "preserve-3d",
-    // ease: "Power3.inOut",
-    // });
-    tl.fromTo(
-      [line1.current, line2.current, line3.current, line4.current],
-      { opacity: 0, x: 0, y: 120, rotateZ: 3, transformStyle: "preserve-3d", ease: "Power3.inOut" },
-      {
-        duration: 1.1,
-        opacity: 1,
-        x: 0,
-        y: 0,
-        rotateZ: 0,
-        transformStyle: "preserve-3d",
-        ease: "Power3.inOut",
-        delay: 0.5,
-        // scrollTrigger: {
-        //   trigger: sectionOne.current,
-        //   start: "top top", // when the top of the trigger hits the top of the viewport
-        //   end: "+=500", // end after scrolling 500px beyond the start
-        //   markers: true,
-        //   // triggerActions: "restart none reset none",
-        // },
-      }
-    );
+  useLayoutEffect(() => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: sectionOne.current,
+          start: "top 80% ",
+          end: "+=500",
+          markers: true,
+          toggleActions: "restart none none reverse",
+        },
+      })
+      .fromTo(
+        [line1.current, line2.current, line3.current, line4.current],
+        { opacity: 0, x: 0, y: 120, rotateZ: 3, transformStyle: "preserve-3d", ease: "Power3.inOut" },
+        { duration: 1.1, opacity: 1, x: 0, y: 0, rotateZ: 0, transformStyle: "preserve-3d", ease: "Power3.inOut" }
+      );
   }, []);
   return (
     <section className="section about-cagency">

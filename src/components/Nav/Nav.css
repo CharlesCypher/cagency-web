@@ -1,11 +1,27 @@
 .cagency-header {
-    padding-block: 1.5rem;
-    position: absolute;
-    z-index: 999;
-    width: 100%;
+    min-height: 100vh;
+    background-image: url(https://odama.io/images/bg-hero-home.webp);
+    background-position: 50% 0;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    position: relative;
 }
 
 .cagency-navbar {
+    position: absolute;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    background-color: transparent;
+}
+
+.container.container-nav {
     justify-content: space-between;
     align-items: center;
     display: flex;
