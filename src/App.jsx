@@ -20,8 +20,8 @@ const App = () => {
             animate={{ x, y }}
             transition={{
               type: "spring",
-              stiffness: 500,
-              damping: 28,
+              stiffness: 1000,
+              damping: 25,
               restDelta: 0.001,
             }}
           ></motion.div>
