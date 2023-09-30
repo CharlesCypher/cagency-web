@@ -1,3 +1,42 @@
+/* Fluid font size variables, for browsers that support clamp */
+@supports (font-size: clamp(1rem, 1vw, 1rem)) {
+    :root {
+        --font-size-h1: clamp(2rem, 7.2vw + 0.56rem, 6.5rem);
+        --font-size-h2: clamp(2.5rem, 4.8vw + 1.54rem, 5.5rem);
+        --font-size-h3: clamp(2.5rem, 3.2vw + 1.86rem, 4.5rem);
+        --font-size-h4: clamp(1.5rem, 1.6vw + 1.18rem, 2.5rem);
+        --font-size-h5: clamp(2rem, 0.4vw + 1.92rem, 2.25rem);
+        --font-size-p: clamp(1.13rem, 0.2vw + 1.08rem, 1.25rem);
+
+    }
+}
+
+/* Fallback variables for browsers that don't support clamp */
+@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+    :root {
+        --font-size-h1: 2rem;
+        --font-size-h2: 2.5rem;
+        --font-size-h3: 2.5rem;
+        --font-size-h4: 1.5rem;
+        --font-size-h5: 2rem;
+        --font-size-p: 1.13rem;
+
+
+    }
+
+    @media screen and (min-width: 1320px) {
+        :root {
+            --font-size-h1: 6.5rem;
+            --font-size-h2: 5.5rem;
+            --font-size-h3: 4.5rem;
+            --font-size-h4: 2.5rem;
+            --font-size-h5: 2.25rem;
+            --font-size-p: 1.25rem;
+
+        }
+    }
+}
+
 *,
 *::before,
 *::after {

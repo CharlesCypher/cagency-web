@@ -8,14 +8,45 @@
     display: flex;
 }
 
-.text-wrapper.ani-hover {
+.section.mouse-ani-sect {
+    transition: background-color .2s linear;
+}
+
+.text-wrapper-ani-hover {
     cursor: default;
     padding-bottom: 1.25rem;
     display: inline-block;
 }
 
-.section.mouse-ani-sect {
-    transition: background-color .2s linear;
+.text-wrapper-ani-hover:hover img {
+    opacity: 1;
+    z-index: -2;
+}
+
+.text-wrapper-ani-hover img {
+    opacity: 0;
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    transition: ease .2s;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+}
+
+.data-img-one {
+    z-index: 999;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    width: 4rem;
+    height: 10rem;
+    position: absolute;
+    transition: transform 2s;
+    /* background-color: blueviolet; */
+    transform: translate(-50%, -50%);
+    /* background-image: url(https://uploads-ssl.webflow.com/63116a2c2e256f544530a58f/63315273199d5ea87deeb637_1.png); */
 }
 
 .fp-section {

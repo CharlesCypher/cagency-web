@@ -1,0 +1,44 @@
+/* .cursor-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hover-text {
+    font-size: 24px;
+    color: #333;
+    cursor: none;
+}
+
+.custom-cursor {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    z-index: 999;
+} */
+
+.custom-cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-image: url('path/to/your/cursor-image.png');
+    background-size: cover;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.text-with-hover {
+    cursor: none;
+    /* Hide default cursor */
+    /* Add your text styling */
+}

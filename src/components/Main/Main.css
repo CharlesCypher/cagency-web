@@ -27,15 +27,21 @@
 }
 
 .hero-h1 {
-    font-size: 6.5rem;
+    text-align: center;
     font-weight: 600;
 }
 
+@media screen and (max-width: 475px) {
+    .hero-header-wrapper.desktop {
+        display: none;
+    }
 
-@media screen and (max-width: 768px) {
+    .hero-header-wrapper.mobile {
+        display: flex;
+    }
+
     .hero-h1 {
-        font-size: 4.5rem;
-        font-weight: 600;
+        text-align: left;
     }
 }
 

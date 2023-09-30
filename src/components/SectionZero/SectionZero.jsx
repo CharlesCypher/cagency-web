@@ -35,28 +35,6 @@ const SectionZero = () => {
     return () => ctx.revert();
   }, []);
 
-  // useEffect(() => {
-  //   const sections = [...document.querySelectorAll(".section")];
-  //   let options = {
-  //     rootMargin: "0px",
-  //     threshold: 0.75,
-  //   };
-  //   const callback = (entries) => {
-  //     entries.forEach((entry) => {
-  //       const { target } = entry;
-  //       if (entry.intersectionRatio >= 0.75) {
-  //         target.classList.add("is-visible");
-  //       } else {
-  //         target.classList.remove("is-visible");
-  //       }
-  //     });
-  //   };
-  //   const observer = new IntersectionObserver(callback, options);
-
-  //   sections.forEach((section) => {
-  //     observer.observe(section);
-  //   });
-  // }, []);
   return (
     <header className="cagency-header">
       <nav role="navigation" className="cagency-navbar">
@@ -151,7 +129,7 @@ const SectionZero = () => {
       </nav>
       <div className="main-overlay"></div>
       <div className="section hero-wrapper relative">
-        <div className="container hero-header-wrapper desktop data-content">
+        <div className="container hero-header-wrapper desktop">
           <div className="cropper-heading">
             <div className="text-wrapper" ref={line1}>
               <h1 className="hero-h1">PURSUE YOUR GOAL</h1>

@@ -46,10 +46,10 @@ const SectionTwo = () => {
   }, []);
   return (
     <section className="section section-two" ref={sectionRef}>
-      <div className="container data-content">
+      <div className="container">
         <div className="row gap-8">
           <div className="col col-2 w-60">
-            <div className="sect-4-grid">
+            <div className="sect-2-grid">
               <div className="sticky-paper" ref={paper1}>
                 <img
                   src="https://odama.io/images/odama_LP_Artboard-1.png"

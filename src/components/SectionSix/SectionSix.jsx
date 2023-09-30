@@ -16,7 +16,6 @@ const SectionSix = () => {
             trigger: sectionRef.current,
             start: "top 85% ",
             end: "+=500",
-            toggleActions: "restart",
           },
         })
         .fromTo(

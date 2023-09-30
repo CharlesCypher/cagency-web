@@ -42,15 +42,24 @@ const SectionThree = () => {
     });
     return () => ctx.revert();
   }, []);
+
+  const handleMouseEnter = () => {
+    sectionRef.current.style.backgroundColor = "#2D2E2A";
+  };
+  const handleMouseLeave = () => {
+    sectionRef.current.style.backgroundColor = "transparent";
+  };
+
   return (
     <section className="section mouse-ani-sect fp-section" ref={sectionRef}>
-      <div className="container relative data-content">
+      <div className="container relative">
         <div className="section-content sect-3">
           <div className="cropper-heading">
-            <div className="text-wrapper-ani-hover" ref={line1}>
+            <div className="text-wrapper-ani-hover" ref={line1} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
               <Link to="/">
                 <h2 className="section-title text-white">Branding</h2>
               </Link>
+              <img src="https://uploads-ssl.webflow.com/63116a2c2e256f544530a58f/63315273199d5ea87deeb637_1.png" alt="" />
             </div>
           </div>
           <div className="cropper-heading">

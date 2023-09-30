@@ -1,3 +1,13 @@
+.button-cta-wrapper {
+    padding: 30px 40px;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .2s linear;
+}
+
 .button-cta {
     border-radius: 0.5rem;
     letter-spacing: 1px;
@@ -27,4 +37,10 @@
 
 .button-cta:hover.button-cta::after {
     height: 200%;
+}
+
+@media screen and (max-width: 475px) {
+    .button-cta {
+        font-size: 1.25rem;
+    }
 }

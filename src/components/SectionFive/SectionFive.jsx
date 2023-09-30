@@ -1,7 +1,6 @@
 import "./SectionFive.css";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -44,29 +43,29 @@ const SectionFive = () => {
   //   let mouseYPosition = 0;
   //   if (mouse.x !== null) mouseXPosition = mouse.clientX;
   //   if (mouse.y !== null) mouseYPosition = mouse.clientY;
-  const variants = {
-    // default: {
-    //   transformStyle: "preserve-3d",
-    //   willChange: "transform, opacity",
-    //   x: mouseXPosition,
-    //   y: mouseYPosition,
-    // },
-    // sectionEnter: {
-    //   opacity: 1,
-    //   transformStyle: "preserve-3d",
-    //   willChange: "transform, opacity",
-    //   x: mouseXPosition - 100,
-    //   y: mouseYPosition - 100,
-    // },
-  };
+  // const variants = {
+  //   // default: {
+  //   //   transformStyle: "preserve-3d",
+  //   //   willChange: "transform, opacity",
+  //   //   x: mouseXPosition,
+  //   //   y: mouseYPosition,
+  //   // },
+  //   // sectionEnter: {
+  //   //   opacity: 1,
+  //   //   transformStyle: "preserve-3d",
+  //   //   willChange: "transform, opacity",
+  //   //   x: mouseXPosition - 100,
+  //   //   y: mouseYPosition - 100,
+  //   // },
+  // };
   const handleOnEnter = () => {
     const cursor = document.querySelector(".custom-cursor-wrapper");
-    cursor.classList.add("d-none");
+    cursor?.classList.add("d-none");
   };
 
   const handleOnLeave = () => {
     const cursor = document.querySelector(".custom-cursor-wrapper");
-    cursor.classList.remove("d-none");
+    cursor?.classList.remove("d-none");
   };
   return (
     <section ref={ref} className="section bg-primary relative orange" onMouseEnter={handleOnEnter} onMouseLeave={handleOnLeave}>

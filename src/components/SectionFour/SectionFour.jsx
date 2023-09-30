@@ -1,10 +1,10 @@
 import "./SectionFour.css";
 import { useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const SectionFour = () => {
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
 
   const sectionRef = useRef(null);
   const line1 = useRef(null);
@@ -27,13 +27,22 @@ const SectionFour = () => {
   //         },
   //       })
   //       .fromTo(
-  //         [line1.current, line2.current, line3.current, line4.current, line5.current, line6.current],
-  //         { opacity: 0, y: 0, rotateZ: 0, transformStyle: "preserve-3d", ease: "Power3.inOut" },
+  //         line1.current,
+  //         {
+  //           opacity: 0,
+  //           y: 0,
+  //           rotateZ: 0,
+  //           transformStyle: "preserve-3d",
+  //           transformOrigin: "0",
+  //           transform: 0,
+  //           ease: "Power3.inOut",
+  //         },
   //         {
   //           duration: 1,
   //           opacity: 1,
   //           y: 0,
   //           rotateZ: 0,
+  //           transform: 0,
   //           transformStyle: "preserve-3d",
   //           ease: "Power3.inOut",
   //           stagger: {
